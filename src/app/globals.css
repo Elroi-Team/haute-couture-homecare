@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+/* Luxury Palm Beach Ocean Blue Palette */
+:root {
+  /* Ocean Blues */
+  --navy: #0F2942;
+  --navy-light: #1A3A52;
+  --ocean: #1E4D6B;
+  --ocean-light: #2A6282;
+  --aqua: #5A9CB8;
+  --aqua-light: #7BB4CA;
+  --seafoam: #A7D1E0;
+  --seafoam-light: #E5F2F7;
+
+  /* Warm Neutrals */
+  --sand: #F7F5F0;
+  --sand-dark: #E8E4DC;
+  --cream: #FDFCFA;
+  --pearl: #FFFFFF;
+
+  /* Accent */
+  --coral: #D4956A;
+  --coral-light: #E0AC86;
+  --coral-dark: #B87D52;
+
+  /* Neutrals */
+  --charcoal: #2C3E4A;
+  --charcoal-light: #4A5D6A;
+  --muted-gray: #8A9BA8;
+  --soft-gray: #D4DDE3;
+
+  --background: var(--cream);
+  --foreground: var(--navy);
+  --accent: var(--aqua);
+  --muted: var(--soft-gray);
+
+  /* Legacy mappings for compatibility */
+  --ivory: var(--cream);
+  --champagne: var(--seafoam-light);
+  --champagne-light: var(--seafoam-light);
+  --champagne-dark: var(--seafoam);
+  --charcoal-dark: var(--navy);
+  --gold: var(--aqua);
+  --gold-light: var(--aqua-light);
+  --gold-dark: var(--ocean);
+  --warm-white: var(--sand);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ivory: var(--cream);
+  --color-champagne: var(--seafoam-light);
+  --color-champagne-light: var(--seafoam-light);
+  --color-champagne-dark: var(--seafoam);
+  --color-charcoal: var(--navy);
+  --color-charcoal-light: var(--charcoal-light);
+  --color-charcoal-dark: var(--navy);
+  --color-gold: var(--aqua);
+  --color-gold-light: var(--aqua-light);
+  --color-gold-dark: var(--ocean);
+  --color-warm-white: var(--sand);
+  --color-soft-gray: var(--soft-gray);
+  --color-muted-gray: var(--muted-gray);
+
+  /* New ocean colors */
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-ocean: var(--ocean);
+  --color-ocean-light: var(--ocean-light);
+  --color-aqua: var(--aqua);
+  --color-aqua-light: var(--aqua-light);
+  --color-seafoam: var(--seafoam);
+  --color-seafoam-light: var(--seafoam-light);
+  --color-sand: var(--sand);
+  --color-sand-dark: var(--sand-dark);
+  --color-cream: var(--cream);
+  --color-pearl: var(--pearl);
+  --color-coral: var(--coral);
+  --color-coral-light: var(--coral-light);
+  --color-coral-dark: var(--coral-dark);
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+/* Paragraph sizes */
+p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.text-lg {
+  font-size: 1.25rem !important;
+}
+
+.text-xl {
+  font-size: 1.375rem !important;
+}
+
+.text-2xl {
+  font-size: 1.5rem !important;
+}
+
+/* Luxury Link Styles */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--cream);
+  border: 1px solid var(--navy);
+}
+
+.btn-primary:hover {
+  background: var(--ocean);
+  border-color: var(--ocean);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.btn-gold {
+  background: var(--aqua);
+  color: var(--navy);
+  border: 1px solid var(--aqua);
+}
+
+.btn-gold:hover {
+  background: var(--ocean);
+  border-color: var(--ocean);
+  color: var(--cream);
+}
+
+/* Form Styles */
+input, textarea, select {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--soft-gray);
+  border-radius: 2px;
+  background: var(--pearl);
+  color: var(--navy);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--aqua);
+  box-shadow: 0 0 0 3px rgba(90, 156, 184, 0.15);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--muted-gray);
+}
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--aqua);
+  margin: 1.5rem 0;
+}
+
+/* Container */
+.container-luxury {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-luxury {
+    padding: 0 2.5rem;
+  }
+}
+
+/* Section Spacing */
+.section {
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 0;
+  }
+}
+
+/* Subtle Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Editorial Quote Styling */
+blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--charcoal-light);
+  border-left: 2px solid var(--aqua);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Cards */
+.card {
+  background: var(--sand);
+  border: 1px solid var(--soft-gray);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--seafoam);
+  box-shadow: 0 10px 40px rgba(15, 41, 66, 0.08);
+}
+
+/* Selection */
+::selection {
+  background: var(--seafoam);
+  color: var(--navy);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--navy);
+  color: var(--cream);
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
