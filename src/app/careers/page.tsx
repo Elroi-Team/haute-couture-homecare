@@ -149,19 +149,11 @@ export default function CareersPage() {
                 key={position.title}
                 className="bg-warm-white border border-soft-gray p-8"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="font-serif text-xl text-charcoal">
-                      {position.title}
-                    </h3>
-                    <p className="text-gold text-sm">{position.type}</p>
-                  </div>
-                  <Link
-                    href={`mailto:${siteConfig.email}?subject=Application: ${position.title}`}
-                    className="btn btn-primary text-sm"
-                  >
-                    Apply Now
-                  </Link>
+                <div className="mb-6">
+                  <h3 className="font-serif text-xl text-charcoal">
+                    {position.title}
+                  </h3>
+                  <p className="text-gold text-sm">{position.type}</p>
                 </div>
 
                 <p className="text-charcoal-light mb-6">{position.description}</p>
@@ -188,11 +180,11 @@ export default function CareersPage() {
 
           <div className="text-center mt-12">
             <p className="text-charcoal-light mb-4">
-              Don&apos;t see the right position? We&apos;d still love to hear from you.
+              If any of these positions sound like a fit, we&apos;d love to hear from you.
             </p>
             <Link
-              href={`mailto:${siteConfig.email}?subject=General Employment Inquiry`}
-              className="btn btn-secondary"
+              href={`mailto:${siteConfig.email}?subject=Career Application - Haute Couture Home Care`}
+              className="btn btn-primary"
             >
               Send Your Resume
               <ArrowRight size={18} />
@@ -257,10 +249,10 @@ export default function CareersPage() {
             profound impact of exceptional care.
           </p>
           <Link
-            href={`mailto:${siteConfig.email}?subject=Career Inquiry`}
+            href={`mailto:${siteConfig.email}?subject=Career Application - Haute Couture Home Care`}
             className="btn btn-gold"
           >
-            Start Your Application
+            Send Your Resume
             <ArrowRight size={18} />
           </Link>
         </div>
