@@ -1,20 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import {
-  Heart,
-  Sparkles,
-  Home,
-  RefreshCw,
-  Activity,
-  Brain,
-  Moon,
-  Car,
   ArrowRight,
   Check,
-  LucideIcon,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui";
 import { services, siteConfig } from "@/lib/config";
+import { serviceIllustrations } from "@/components/illustrations/ServiceIllustrations";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -22,16 +14,6 @@ export const metadata: Metadata = {
     "Explore our comprehensive range of premium in-home care services including companion care, personal care, respite care, memory care, and more.",
 };
 
-const iconMap: Record<string, LucideIcon> = {
-  Heart,
-  Sparkles,
-  Home,
-  RefreshCw,
-  Activity,
-  Brain,
-  Moon,
-  Car,
-};
 
 export default function ServicesPage() {
   return (
@@ -62,7 +44,7 @@ export default function ServicesPage() {
         <div className="container-luxury">
           <div className="space-y-20">
             {services.map((service, index) => {
-              const IconComponent = iconMap[service.icon] || Heart;
+              const Illustration = serviceIllustrations[service.id];
               const isEven = index % 2 === 0;
 
               return (
@@ -78,14 +60,9 @@ export default function ServicesPage() {
                   >
                     {/* Content */}
                     <div className={isEven ? "" : "lg:order-2"}>
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-14 h-14 flex items-center justify-center bg-gold/10 text-gold">
-                          <IconComponent size={28} strokeWidth={1.5} />
-                        </div>
-                        <h2 className="font-serif text-2xl md:text-3xl text-charcoal">
-                          {service.title}
-                        </h2>
-                      </div>
+                      <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-6">
+                        {service.title}
+                      </h2>
 
                       <p className="text-charcoal-light leading-relaxed mb-8">
                         {service.description}
@@ -111,19 +88,15 @@ export default function ServicesPage() {
                       </Link>
                     </div>
 
-                    {/* Visual */}
+                    {/* Service Illustration */}
                     <div
-                      className={`relative aspect-[4/3] bg-champagne-light ${
+                      className={`relative aspect-[4/3] flex items-center justify-center ${
                         isEven ? "lg:order-2" : ""
                       }`}
                     >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <IconComponent
-                          size={120}
-                          className="text-champagne-dark/30"
-                          strokeWidth={0.5}
-                        />
-                      </div>
+                      {Illustration && (
+                        <Illustration className="w-full h-full max-w-[320px] max-h-[320px]" />
+                      )}
                     </div>
                   </div>
 
