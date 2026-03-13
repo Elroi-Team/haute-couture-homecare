@@ -90,12 +90,14 @@ export default function ServicesPage() {
 
                     {/* Service Illustration */}
                     <div
-                      className={`relative aspect-[4/3] flex items-center justify-center ${
+                      className={`relative aspect-[4/3] flex items-center justify-center bg-champagne-light/50 rounded-lg ${
                         isEven ? "lg:order-2" : ""
                       }`}
                     >
-                      {Illustration && (
-                        <Illustration className="w-full h-full max-w-[320px] max-h-[320px]" />
+                      {Illustration ? (
+                        <Illustration className="w-64 h-64" />
+                      ) : (
+                        <span className="text-charcoal-light">No illustration</span>
                       )}
                     </div>
                   </div>
